@@ -33,7 +33,7 @@ class inputCommand implements Callable<Integer> {
     @Option(names = {"-p", "--path"}, description = "Used to input item path to convert", required = true)
     Path inputFilePath;
 
-    @Option(names = {"-out, --output"}, description = "Used select output type", required = true)
+    @Option(names = {"-out", "--output"}, description = "Used select output type", required = true)
     String outputType;
 
     @Option(names = {"-n", "--name"}, description = "Used to name converted file")
