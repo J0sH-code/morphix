@@ -35,7 +35,7 @@ public class ConverterCommand implements Callable<Integer>{
 class inputCommand implements Callable<Integer> {
 
     @Option(names = {"-p", "--path"}, description = "Used to input item path to convert", required = true)
-    Path inputFilePath;
+    String inputFileString;
     
     @Option(names = {"-out", "--output"}, description = "Used select output type", required = true)
     String outputType;
@@ -49,7 +49,7 @@ class inputCommand implements Callable<Integer> {
     
     @Override
     public Integer call() throws Exception {
-        
+        Path inputFilePath = Path.of(inputFileString);
         FileType inputType = checkFileType(inputFilePath);
         System.out.println("[INPUT] input path string: " + inputFilePath);
         System.out.println("[INPUT] detected file type: " + inputType);

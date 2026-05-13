@@ -14,7 +14,7 @@
     "allPublicMethods" : true,
     "fields" : [
       { "name" : "fileName" },
-      { "name" : "inputFilePath" },
+      { "name" : "inputFileString" },
       { "name" : "outPutFilePath" },
       { "name" : "outputType" }
     ]
