@@ -8,7 +8,7 @@ import picocli.CommandLine;
 public class Main {
     public static void main(String[] args) {
         BannerPrinter.print();
-        new CommandLine(new ConverterCommand()).execute("input", "--path=FILEPATH", "-out=PDF", "--name=OUTPUTNAME", "--outputPath=OUTPUTPATH");
+        new CommandLine(new ConverterCommand()).execute("input", "--path=C:/Users/ryles/Downloads/morphix/pom.xml", "-out=PDF", "--name=OUTPUTNAME", "--outputPath=OUTPUTPATH");
     }
 }
 

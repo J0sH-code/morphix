@@ -1,5 +1,8 @@
 package com.github.j0sh.converter;
 
-public interface Converter {
+import java.nio.file.Path;
 
+public interface Converter {
+    public void convert(Path filePath);
+    
 }
