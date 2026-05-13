@@ -3,6 +3,7 @@ package com.github.j0sh.cli;
 import java.nio.file.Path;
 import java.util.concurrent.Callable;
 
+import com.github.j0sh.dispatcher.ConverterDispatcher;
 import com.github.j0sh.util.FileType;
 import com.github.j0sh.util.FileUtils;
 
@@ -44,15 +45,19 @@ class inputCommand implements Callable<Integer> {
 
     @Option(names = {"-op", "--outputPath"}, description = "Used to specify location of converted file")
     Path outPutFilePath;
+
     
     @Override
     public Integer call() throws Exception {
+        
         FileType inputType = checkFileType(inputFilePath);
         System.out.println("[INPUT] input path string: " + inputFilePath);
         System.out.println("[INPUT] detected file type: " + inputType);
         System.out.println("[INPUT] desired output type: " + outputType);
         System.out.println("[INPUT] name: " + fileName);
         System.out.println("[INPUT] output path: " + outPutFilePath);
+
+        ConverterDispatcher.execute(inputFilePath.normalize(), outputType, fileName, outPutFilePath);
         return 0;
     }
     
