@@ -109,5 +109,9 @@ public final class FileUtils {
     public static boolean isKnownType(Path filePath) {
         return getFileType(filePath) != FileType.UNKNOWN;
     }
+
+    public static Path checkAbPath() {
+        return null;
+    }
 }
 

@@ -13,7 +13,8 @@ import picocli.CommandLine.Option;
 @Command(name = "morphinx", 
         mixinStandardHelpOptions = true,
         optionListHeading = "%nOptions are:%n",
-        commandListHeading = "%nSubCommands are:%n", 
+        commandListHeading = "%nSubCommands are:%n",
+        subcommandsRepeatable = true, 
         subcommands = {
             inputCommand.class
         })

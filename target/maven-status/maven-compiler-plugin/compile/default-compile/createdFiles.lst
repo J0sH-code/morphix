@@ -1,0 +1,13 @@
+com\github\j0sh\util\FileType.class
+com\github\j0sh\converter\MediaConverter.class
+com\github\j0sh\cli\inputCommand.class
+com\github\j0sh\ui\BannerPrinter.class
+com\github\j0sh\dispatcher\ConverterDispatcher$1.class
+com\github\j0sh\cli\ConverterCommand.class
+com\github\j0sh\Main.class
+com\github\j0sh\dispatcher\ConverterDispatcher.class
+com\github\j0sh\converter\Converter.class
+com\github\j0sh\util\FileUtils.class
+com\github\j0sh\util\FfmpegChecker.class
+com\github\j0sh\converter\DocumentConverter.class
+com\github\j0sh\converter\ImageConverter.class
