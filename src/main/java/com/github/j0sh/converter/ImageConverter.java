@@ -33,15 +33,7 @@ public class ImageConverter implements Converter{
 
             // Check if the output format is supported
             String[] supportedFormats = ImageIO.getWriterFormatNames();
-            boolean formatSupported = false;
-            for (String format : supportedFormats) {
-                if (format.equalsIgnoreCase(outputType)) {
-                    formatSupported = true;
-                    break;
-                }
-            }
-
-            if (!formatSupported) {
+            if (!formatSupported(supportedFormats, outputType)) {
                 System.out.println("Unsupported output format: " + outputType);
                 System.out.println("Supported formats: " + String.join(", ", supportedFormats));
                 return;
@@ -54,6 +46,7 @@ public class ImageConverter implements Converter{
             } else {
                 System.out.println("Failed to write image - no appropriate writer found for the format.");
             }
+            
         } catch (IOException e) {
             System.out.println("File does not exist");
         } catch (NullArgumentException e) {
@@ -61,12 +54,13 @@ public class ImageConverter implements Converter{
         }
     }
 
-    private Path getOutputPath(Path inputPath) {
-        String inputString = inputPath.toString();
-        int lastSlashPoint = inputString.lastIndexOf("\\");
-        Path outputPath = Path.of(inputString.replace(inputString.substring(lastSlashPoint),""));
-
-        return outputPath;
+    private boolean formatSupported(String[] supportedFormats, String outputType) {
+        for (String format : supportedFormats) {
+            if (format.equalsIgnoreCase(outputType)) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }
