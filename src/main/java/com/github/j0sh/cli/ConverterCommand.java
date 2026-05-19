@@ -58,7 +58,7 @@ class inputCommand implements Callable<Integer> {
         System.out.println("[INPUT] name: " + fileName);
         System.out.println("[INPUT] output path: " + outPutFilePath);
 
-        ConverterDispatcher.execute(inputFilePath.normalize(), outputType, fileName, outPutFilePath);
+        ConverterDispatcher.execute(inputFilePath.toAbsolutePath().normalize(), outputType, fileName, outPutFilePath);
         return 0;
     }
     
